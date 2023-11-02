@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Price Prediction</title>
+    <style>
+        /* CSS for the body and background image */
+        *{
+            margin: 0px;
+            padding:0px;
+            box-sizing:border-box;
+            
+        }
+        body {
+            inline-size:100%;
+            block-size:100vh;
+            background-image: url('https://m-cdn.phonearena.com/images/article/64576-wide-two_1200/The-Best-Phones-to-buy-in-2023---our-top-10-list.jpg');/* Add your background image URL */
+            background-repeat:no-repeat;
+            background-size: cover;
+            background-position: center;
+            color: black; /* Set text color to white for better visibility */
+            text-align: center; /* Center-align the content */
+
+        }
+
+        /* CSS for aligning side headings with placeholders and adjusting spacing */
+        .input-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0; /* Adjust the spacing between side headings */
+        }
+
+        .input-container label {
+            flex-basis: 40%; /* Adjust the width of the label */
+            text-align: end; /* Align label text to the right */
+            font-size: 30px;
+        }
+        .highlight {
+            background-color: black; /* Change to your preferred highlight style */
+            font-weight: bold;
+        }
+
+        .input-container input,
+        .input-container select {
+            flex-grow: 1; /* Allow the input to take up the remaining space */
+            font-size: 20px; /* Adjust the font size of the input elements */
+            padding: 10px; /* Add padding to the input elements for spacing */
+        }
+        h1 {
+            font-family: Arial, sans-serif; /* Change the font as desired */
+            font-size: 50px;
+            color: black; /* Text color */
+            padding: 70px; /* Add padding for better appearance */
+            border-radius: 10px; /* Add rounded corners */
+        }
+        input[type="submit"] {
+        font-size: 20px; /* Adjust the font size as needed */
+        padding: 10px 30px; /* Adjust the padding for the button */
+        }
+        p {
+        font-size: 24px; /* Adjust the font size as needed */
+        }  
+
+    </style>
+</head>
+<body>
+    <h1 align="center">Mobile Price Prediction </h1>
+    <div class="background"></div>
+
+    <form method="POST" action="/predict">
+        <div class="input-container">
+            <label for="a">Brand:</label>
+            <select name="a" required>
+                <option value="OnePlus">OnePlus</option>
+                <option value="Realme">Realme</option>
+                <option value="Apple">Apple</option>
+                <option value="LG">LG</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Asus">Asus</option>
+                <option value="Xiaomi">Xiaomi</option>
+                <option value="Oppo">Oppo</option>
+                <option value="Huawei">Huawei</option>
+                <option value="Google">Google</option>
+                <option value="Nokia">Nokia</option>
+                <option value="HTC">HTC</option>
+                <option value="Motorola">Motorola</option>
+                <option value="Honor">Honor</option>
+                <option value="Yu">Yu</option>
+                <option value="Poco">Poco</option>
+                <option value="Vivo">Vivo</option>
+                <option value="Nubia">Nubia</option>
+                <option value="Black Shark">Black Shark</option>
+                <option value="Infinix">Infinix</option>
+                <option value="Lenovo">Lenovo</option>
+                <option value="Sony">Sony</option>
+                <option value="Jio">Jio</option>
+                <option value="Coolpad">Coolpad</option>
+                <option value="Micromax">Micromax</option>
+                <option value="Smartron">Smartron</option>
+                <option value="LeEco">LeEco</option>
+                <option value="BlackBerry">BlackBerry</option>
+                <option value="Gionee">Gionee</option>
+                <option value="Meizu">Meizu</option>
+                <option value="Panasonic">Panasonic</option>
+                <option value="Tecno">Tecno</option>
+                <option value="InFocus">InFocus</option>
+                <option value="Itel">Itel</option>
+                <option value="10.or">10.or</option>
+                <option value="Lava">Lava</option>
+                <option value="Cat">Cat</option>
+                <option value="Lyf">Lyf</option>
+                <option value="Intex">Intex</option>
+                <option value="Xolo">Xolo</option>
+                <option value="Acer">Acer</option>
+                <option value="Phicomm">Phicomm</option>
+                <option value="Karbonn">Karbonn</option>
+                <option value="Spice">Spice</option>
+                <option value="iVoomi">iVoomi</option>
+                <option value="Kult">Kult</option>
+                <option value="Nuu Mobile">Nuu Mobile</option>
+                <option value="Ziox">Ziox</option>
+                <option value="Zopo">Zopo</option>
+                <option value="ZTE">ZTE</option>
+                <option value="Onida">Onida</option>
+                <option value="Microsoft">Microsoft</option>
+                <option value="iBall">iBall</option>
+                <option value="Mobiistar">Mobiistar</option>
+                <option value="Comio">Comio</option>
+                <option value="Videocon">Videocon</option>
+                <option value="Alcatel">Alcatel</option>
+                <option value="Reach">Reach</option>
+                <option value="Zen">Zen</option>
+                <option value="Tambo">Tambo</option>
+                <option value="Razer">Razer</option>
+                <option value="Homtom">Homtom</option>
+                <option value="Lephone">Lephone</option>
+                <option value="Aqua">Aqua</option>
+                <option value="Celkon">Celkon</option>
+                <option value="Jivi">Jivi</option>
+                <option value="Billion">Billion</option>
+                <option value="Swipe">Swipe</option>
+                <option value="M-tech">M-tech</option>
+                <option value="Sansui">Sansui</option>
+                <option value="Zuk">Zuk</option>
+                <option value="TCL">TCL</option>
+                <option value="mPhone">mPhone</option>
+                <option value="Blu">Blu</option>
+                <option value="HP">HP</option>
+                <option value="Philips">Philips</option>
+            </select>
+            <br><br>
+        </div>
+
+        <div class="input-container">
+            <label for="b">Battery Capacity:</label>
+            <input type="number" name="b" min="1010" max="6000" step="any" placeholder="Enter Values Between 1010 - 6000" required>
+        </div>
+
+        <div class="input-container">
+            <label for="c">Processor:</label>
+            <select name="c" id="Processor">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="4">4</option>
+                <option value="6">6</option>
+                <option value="8">8</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+
+        <div class="input-container">
+            <label for="d">RAM:</label>
+            <input type="number" name="d" min="64" max="12000" required placeholder="Enter RAM (between 64 MB and 12 GB)">   
+        </div>
+
+        <div class="input-container">
+            <label for="e">Internal Storage (GB):</label>
+            <select name="e" id="Internal_storage">
+                <option value="8">8</option>
+                <option value="16">16</option>
+                <option value="32">32</option>
+                <option value="64">64</option>
+                <option value="128">128</option>
+                <option value="256">256</option>
+                <option value="512">512</option>
+            </select>
+        </div>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+    <p>Predicted Price: INR<span class="{% if highlight %}highlight{% endif %}">{{ prediction }}</span></p>
+    {% endif %}
+
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    
+    
+</body>
+</html>
